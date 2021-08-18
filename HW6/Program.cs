@@ -70,7 +70,7 @@ namespace HW6
 
                 TimeSpan workTime = DateTime.Now.Subtract(startWriteTime);
                 Console.WriteLine("Данные успешно записаны...");
-                Console.WriteLine("Время выполнения состравило: " + workTime.TotalSeconds);
+                Console.WriteLine($"Время выполнения состравило: {workTime.TotalSeconds:f2} сек.");
 
                 if (EnterYesNo("Хотите заархивировать файл? (Y/N) : "))
                 {
@@ -126,8 +126,6 @@ namespace HW6
         /// <returns></returns>
         static bool EnterYesNo(string text)
         {
-
-
             if (text != "") Console.WriteLine(text);
             char yn;
             bool correctParse, result = false;
