@@ -208,9 +208,11 @@ namespace HW6
 
         public static void GZip(string patch)
         {
+            char[] charSeparator = new char[1] {'.'};
+            var newpatch = patch.Split(charSeparator)[0]+".zip";
             using (FileStream ss = new FileStream(patch, FileMode.OpenOrCreate))
             {
-                using (FileStream ts = File.Create($"{patch}_compessed"))
+                using (FileStream ts = File.Create(newpatch))
                 {
                     //поток архивации 
                     using (GZipStream cs = new GZipStream(ts, CompressionMode.Compress))
